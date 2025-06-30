@@ -1,6 +1,6 @@
 /* ----------- BASE ----------- */
 body {
-  font-family: 'Courier New', monospace;
+  font-family: 'Courier New', Courier, monospace;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,6 +51,22 @@ button:hover {
   background-color: #29b6f6;
 }
 
+/* ----------- CONTROLES (AGRUPAMENTO DE BOTÕES) ----------- */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.controls button {
+  flex: 1 1 45%; /* Ocupa 2 por linha em telas maiores */
+  min-width: 200px;
+  max-width: 250px;
+}
+
 /* ----------- DARK MODE ----------- */
 body.dark {
   background-color: #0e0e2c;
@@ -70,4 +86,25 @@ body.light {
 body.light #story-box {
   background-color: #ffffff;
   color: #333;
+}
+
+/* ----------- RESPONSIVO (MOBILE FIRST) ----------- */
+@media (max-width: 600px) {
+  #story-box {
+    margin: 10px;
+    padding: 15px;
+    font-size: 1rem;
+  }
+
+  button {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+@media (max-width: 600px) {
+  .controls button {
+    flex: 1 1 100%; /* Ocupa toda a linha no mobile */
+    min-width: unset;
+    max-width: 100%;
+  }
 }

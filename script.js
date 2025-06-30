@@ -281,3 +281,34 @@ function alternarTema() {
 
 generateBtn.addEventListener('click', gerarHistoria);
 toggleThemeBtn.addEventListener('click', alternarTema);
+
+document.getElementById('share-twitter').addEventListener('click', () => {
+  const texto = encodeURIComponent(document.getElementById('story').textContent);
+  const url = `https://twitter.com/intent/tweet?text=${texto}`;
+  window.open(url, '_blank');
+});
+
+document.getElementById('copy-story').addEventListener('click', () => {
+  const texto = document.getElementById('story').textContent;
+  navigator.clipboard.writeText(texto).then(() => {
+    alert("História copiada para a área de transferência!");
+  });
+});
+
+document.getElementById('download-image').addEventListener('click', () => {
+  html2canvas(document.getElementById('story-box')).then(canvas => {
+    const link = document.createElement('a');
+    link.download = 'minha-historia-isekai.png';
+    link.href = canvas.toDataURL();
+    link.click();
+  });
+});
+
+const audio = document.getElementById('bg-music');
+document.getElementById('toggle-music').addEventListener('click', () => {
+  if (audio.paused) {
+    audio.play();
+  } else {
+    audio.pause();
+  }
+});

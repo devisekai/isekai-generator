@@ -14,9 +14,23 @@
       <p id="story">Clique no botão para gerar sua nova realidade 🌌</p>
     </div>
 
-    <button id="generate-btn">Gerar novo mundo</button>
-    <button id="toggle-theme">Alternar Tema</button>
+   <section class="controls">
+  <button id="generate-btn">Gerar novo mundo</button>
+  <button id="toggle-theme">Alternar Tema</button>
+  <button id="share-twitter">Compartilhar no X/Twitter</button>
+  <br>
+  <button id="copy-story">Copiar história</button>
+  <button id="download-image">Salvar como imagem</button>
+  <button id="toggle-music">🎵 Música</button>
+</section>
+<audio id="bg-music" loop>
+  <source src="https://freesound.org/data/previews/649/649132_1648178-lq.mp3" type="audio/mpeg">
+  Seu navegador não suporta áudio :(
+</audio>
+
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
 
   <script src="script.js"></script>
 </body>
